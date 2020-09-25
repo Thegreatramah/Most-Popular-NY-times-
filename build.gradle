@@ -22,10 +22,12 @@ buildscript {
         junitVersion = "4.12"
         testRunnerVersion = "1.1.1"
         testRulesVersion = "1.1.1"
-        espressoVersion = "3.2.0"
+        espressoVersion = "3.1.0"
         mockitoVersion = "2.8.9"
         reactivestreams = "1.1.1"
 
+
+        appCompatVersion = '1.1.0-beta01'
     }
 
     repositories {

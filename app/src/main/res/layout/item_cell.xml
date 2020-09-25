@@ -17,13 +17,14 @@
         android:layout_marginLeft="3dp"
         android:layout_marginTop="3dp"
         android:layout_marginRight="3dp"
+        android:onClick="onMoveToDetails"
         app:cardElevation="2dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dp130"
+            android:layout_height="wrap_content"
             android:background="?android:attr/selectableItemBackground"
-            android:padding="@dimen/dp20">
+            android:padding="@dimen/dp5">
 
             <TextView
                 android:id="@+id/title"
@@ -53,12 +54,12 @@
 
             <TextView
                 android:id="@+id/by_Line"
-                android:layout_width="0dp"
+                android:layout_width="@dimen/dp220"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/dp10"
                 android:layout_marginTop="@dimen/dp5"
                 android:layout_marginEnd="@dimen/dp10"
-                android:layout_marginBottom="@dimen/dp33"
+                android:layout_marginBottom="@dimen/dp10"
                 android:ellipsize="end"
                 android:maxLines="1"
                 android:textColor="@color/text_grey"
@@ -75,9 +76,10 @@
                 android:layout_marginStart="@dimen/dp10"
                 android:layout_marginTop="@dimen/dp10"
                 android:layout_marginEnd="@dimen/dp10"
-                android:layout_marginBottom="@dimen/dp20"
+                android:layout_marginBottom="@dimen/dp10"
                 android:orientation="horizontal"
                 android:weightSum="1"
+                android:gravity="center_vertical"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@id/imgView"
                 app:layout_constraintTop_toBottomOf="@id/by_Line">

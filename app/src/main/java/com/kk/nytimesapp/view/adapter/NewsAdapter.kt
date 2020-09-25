@@ -1,5 +1,7 @@
 package com.kk.nytimesapp.view.adapter
 
+import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
@@ -7,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.kk.nytimesapp.R
 import com.kk.nytimesapp.databinding.ItemCellBinding
 import com.kk.nytimesapp.model.Result
+import com.kk.nytimesapp.view.NewsDetailsActivity
 import com.kk.nytimesapp.viewModel.NewsViewModel
 
 class NewsAdapter : RecyclerView.Adapter<NewsAdapter.ViewHolder>() {
@@ -14,7 +17,7 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding: ItemCellBinding = DataBindingUtil.inflate(LayoutInflater.from(parent.context), R.layout.item_cell, parent, false)
-        return ViewHolder(binding)
+        return ViewHolder(binding, parent.context)
     }
 
     override fun getItemCount(): Int {
@@ -30,15 +33,19 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.ViewHolder>() {
         notifyDataSetChanged()
     }
 
-    class ViewHolder(val binding: ItemCellBinding) : RecyclerView.ViewHolder(binding.root) {
+    class ViewHolder(val binding: ItemCellBinding, private val context: Context) : RecyclerView.ViewHolder(binding.root) {
         private val viewModel = NewsViewModel()
 
         fun bind(result: Result) {
             viewModel.bind(result)
             binding.viewModel = viewModel
+
+            binding.cardView.setOnClickListener {
+                val intent = Intent(context, NewsDetailsActivity::class.java)
+                intent.putExtra("URL", result.url)
+                context.startActivity(intent)
+            }
         }
-
-
     }
 
 }
