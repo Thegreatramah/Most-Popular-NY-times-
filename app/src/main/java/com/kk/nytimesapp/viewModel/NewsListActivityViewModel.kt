@@ -17,10 +17,10 @@ import javax.inject.Inject
 
 class NewsListActivityViewModel @Inject constructor(private val resultResponseApi: ResultResponseApi) : ViewModel() {
 
-    val newsAdapter: NewsAdapter = NewsAdapter()
     val loadingVisibility: MutableLiveData<Int> = MutableLiveData()
     val errorMessage: MutableLiveData<Int> = MutableLiveData()
     val noMoreMessage: MutableLiveData<Int> = MutableLiveData()
+    val newsAdapter: NewsAdapter = NewsAdapter()
     val errorClickListener = View.OnClickListener { loadResult() }
 
     //use for add and clear all observer

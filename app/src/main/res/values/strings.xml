@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">NYTimesApp</string>
+    <string name="app_name">NewYorkTimesApp</string>
     <string name="news_details_screen">News Detail</string>
     <string name="app_title">NY Times Most Popular</string>
     <string name="image_description">ImageView for showing Images</string>
